@@ -2,18 +2,19 @@
 
 <html>
 
-  <head>
-    <title>TPP Project | e-shop </title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>TPP Project | e-shop </title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  </head>
+</head>
 
   <body>
     <%= render "shared/header" %>
     <%= yield %>
     <%= render "shared/footer" %>
   </body>
+
 </html>
