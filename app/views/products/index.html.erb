@@ -52,7 +52,9 @@
              <% @items.each do |item| %>
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
+                <div>
                 <img src="<%= item.image_url %>">
+            </div>
                 <div class="card-body">
                   <h4 class="card-title">
                     <%= item.title %>
@@ -60,6 +62,9 @@
                   <h5><%= item.price %> €</h5>
                   <p class="card-text"><%= item.description %></p>
                 </div>
+                <div>
+                </div>
+                <%= link_to "Afficher", product_path(:id => item.id),:class=>"btn btn-secondary" %>
                 <div class="card-footer">
                   <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                 </div>
