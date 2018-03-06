@@ -6,7 +6,7 @@
     <div class="container">
 
       <div class="row">
-          
+
         <div class="col-lg-3">
 
           <h1 class="my-4">Cat Picture Shop</h1>
@@ -18,7 +18,7 @@
 
         </div>
         <!-- /.col-lg-3 -->
-
+          
         <div class="col-lg-9">
 
           <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
@@ -52,9 +52,9 @@
              <% @items.each do |item| %>
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <div>
+
                 <img src="<%= item.image_url %>" width="254" height="240">
-            </div>
+
                 <div class="card-body">
                   <h4 class="card-title">
                     <%= item.title %>
