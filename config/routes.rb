@@ -13,4 +13,8 @@ resources :charges, only: [:new, :create]
 
   get '/showcart', to: 'carts#show', as: 'showcart'
 
+  get '/createorder', to: 'orders#createorder', as: 'createorder'
+
+  get '/orders', to: 'orders#index', as: 'orders'
+
 end
