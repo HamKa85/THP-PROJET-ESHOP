@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 
   get '/products/:id', to: 'products#show', as: 'product'
 
-  get '/products/addtocart/:id', to: 'products#addtocart', as: 'addtocart'
+  get '/products/addtocart/:id', to: 'carts#addtocart', as: 'addtocart'
 
-  get '/cart', to: 'products#cart', as: 'cart'
+  get '/showcart', to: 'carts#show', as: 'showcart'
 
 end
