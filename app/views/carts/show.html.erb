@@ -1,2 +1,20 @@
-<h1>Carts#show</h1>
-<p>Find me in app/views/carts/show.html.erb</p>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Article</th>
+      <th scope="col">description</th>
+      <th scope="col">prix</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%total=0%>
+    <%@cart.each do |value|%>
+    <tr>
+      <td><%=value.title%></td>
+      <td><%=value.description%></td>
+      <td><%=value.price%></td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
