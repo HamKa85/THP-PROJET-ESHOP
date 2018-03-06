@@ -10,13 +10,22 @@ class ProductsController < ApplicationController
   def addtocart
     if user_signed_in?
       @item=Item.find(params[:id])
-      @cart=Cart.create
+      if current_user.cart
+        current_user.cart.items<<@item
+        redirect_to cart_path
+      else
+      @cart=Cart.new
       @cart.user=current_user
       @cart.items<<@item
-      redirect_to root_path
+      @cart.save
+      redirect_to cart_path
+      end
     else
       redirect_to new_user_session_path
     end
   end
 
+  def cart
+     @cart=current_user.cart.items
+  end
 end

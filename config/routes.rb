@@ -9,4 +9,6 @@ Rails.application.routes.draw do
 
   get '/products/addtocart/:id', to: 'products#addtocart', as: 'addtocart'
 
+  get '/cart', to: 'products#cart', as: 'cart'
+
 end
