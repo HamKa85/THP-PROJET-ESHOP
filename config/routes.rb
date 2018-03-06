@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   get '/products/:id', to: 'products#show', as: 'product'
 
+  get '/products/addtocart/:id', to: 'products#addtocart', as: 'addtocart'
+
 end
