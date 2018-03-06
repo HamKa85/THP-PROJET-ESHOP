@@ -1,21 +1,45 @@
+
 <table class="table">
   <thead class="thead-light">
     <tr>
       <th scope="col">Article</th>
       <th scope="col">description</th>
       <th scope="col">prix</th>
-      <th scope="col"></th>
+      <th scope="col">update</th>
     </tr>
   </thead>
   <tbody>
-    <%total=0%>
     <%@cart.each do |value|%>
     <tr>
       <td><%=value.title%></td>
       <td><%=value.description%></td>
       <td><%=value.price%></td>
+      
+      <% $total += value.price %>
     </tr>
     <%end%>
   </tbody>
 </table>
+
 <%= link_to "Valider la commande", createorder_path,:class=>"btn btn-secondary" %>
+
+
+<%= form_tag charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Amount: <%= $total %> </span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="A month's subscription"
+          data-email= "<%= current_user.email %>"
+          data-amount= "<%= @amount %>"
+          data-locale="auto"></script>
+<% end %>

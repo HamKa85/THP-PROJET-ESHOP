@@ -13,6 +13,7 @@ gem 'stripe'
 gem 'devise'
 gem 'bootstrap', '~>4.0.0'
 gem 'jquery-rails'
+gem 'dotenv-rails', :groups => [:development, :test]
 
 
 group :development, :test do
