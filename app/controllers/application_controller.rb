@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
     :email,
     :password,
     :password_confirmation,
+    :order_id
     ) }
   end
 end
