@@ -14,21 +14,33 @@ body {
   }
 }
 
-.form-container{
-  height: 80%;
-  width: 40%;
-  background-color: white;
-  border-color: grey;
-  border-radius: 5px;
-  text-align: center;
-  margin-top: 10%;
-  margin-bottom: 10%;
-  margin-left: 30%;
-  margin-right: 30%;
-}
 
 img {
    vertical-align: middle;
    border-style: none;
-   height: 200px;
+}
+
+
+// --------- form css --------- //
+
+.form-container{
+  margin: 0 !important;
+  width: 100%;
+  background-image: url("form.jpg");
+  background-size: cover;
+}
+
+.form-box{
+margin-top: 10%;
+margin-left: 50%;
+margin-right: 10%;
+margin-bottom: 15%;
+padding-top: 5%;
+padding-bottom: 5%;
+height: 80%;
+width: 25%;
+text-align: center;
+background-color: white;
+border-color: grey;
+border-radius: 5px;
 }
