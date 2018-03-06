@@ -3,7 +3,7 @@ class Order < ApplicationRecord
   has_many :items
 
   def subtotal
-    items.collect { |i| i.valid? ? (i.quantity * i.unit_price) : 0 }.sum
+    items.collect { |i| i.valid? ? (i.count * i.price) : 0 }.sum
   end
 
 private
