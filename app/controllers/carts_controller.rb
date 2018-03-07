@@ -7,7 +7,7 @@ class CartsController < ApplicationController
       else
       cart=Cart.new
       cart.user=current_user
-      cart.items<<@item
+      cart.items<<Item.find(params[:id])
       cart.save
       end
       flash[:success] = "Article ajouté à votre panier"
