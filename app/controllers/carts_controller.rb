@@ -1,34 +1,40 @@
 class CartsController < ApplicationController
+  before_action :require_login
+
   def addtocart
-    if user_signed_in?
-      @item=Item.find(params[:id])
       if current_user.cart
-        current_user.cart.items<<@item
-        redirect_to showcart_path
+         current_user.cart.items << Item.find(params[:id])
       else
-      @cart=Cart.new
-      @cart.user=current_user
-      @cart.items<<@item
-      @cart.save
-      redirect_to showcart_path
+      cart=Cart.new
+      cart.user=current_user
+      cart.items<<Item.find(params[:id])
+      cart.save
       end
-    else
-      redirect_to new_user_session_path
-    end
+      flash[:success] = "Article ajouté à votre panier"
+      redirect_to root_path
   end
 
   def show
-    if user_signed_in?
      @cart=current_user.cart.items
-    else
-     redirect_to root_path
-    end
   end
 
-def destroy
-  @item = Item.find(params[:id])
-  @item.destroy
-  redirect_to showcart_path
-end
+    def deleteitem
+      current_user.cart.items.delete(Item.find(params[:id]))
+      redirect_to showcart_path
+    end
+
+  def destroy
+    current_user.cart.items.clear
+    redirect_to showcart_path
+  end
+
+  private
+
+  def require_login
+    unless user_signed_in?
+      flash[:danger] = "Vous devez vous connecter pour accéder à votre panier"
+      redirect_to new_user_session_path
+    end
+  end
 
 end

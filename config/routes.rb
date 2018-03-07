@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/show'
+
 resources :charges, only: [:new, :create]
 
   get 'carts/show'
@@ -16,5 +18,13 @@ resources :charges, only: [:new, :create]
   get '/createorder', to: 'orders#createorder', as: 'createorder'
 
   get '/orders', to: 'orders#index', as: 'orders'
+
+  delete '/cart/destroy', to: 'carts#destroy', as: 'cartdestroy'
+
+  delete '/cart/destroyitem/:id', to: 'carts#deleteitem', as: 'destroyitem'
+
+  delete '/orderdestroy/:id', to: 'orders#destroy', as: 'orderdestroy'
+
+  get 'users/:id',to: 'users#show', as: 'show_user'
 
 end

@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="/"><img src="http://catsticker.com/images/dancing-cat.gif" width="60" height="45"></a>
+    <a class="navbar-brand" href="/">Posters-de-chat.com<img src="http://catsticker.com/images/dancing-cat.gif" width="60" height="45"></a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,33 +9,37 @@
       <% if user_signed_in? %>
 
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="/">Home
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/carts/show">Panier</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-method="delete" href="/users/sign_out" rel="nofollow">Se déconnecter</a>
-        </li>
+          <div class="dropdown show">
+              <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-user-circle"></i> Mon profile
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="/showcart">Mon panier</a>
+                <a class="dropdown-item" href="/orders">Mes commandes</a>
+                <a class="dropdown-item" href="<%=show_user_path(current_user.id)%>">Mon profile</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" data-method="delete" href="/users/sign_out" rel="nofollow">Se déconnecter</a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/showcart">
+          <i class="fa fa-shopping-basket"></i>
+            <%if current_user.cart%>
+          <%=current_user.cart.items.count%>
+          <%end%>
+        </a>
+          </li>
       </ul>
 
       <% else %>
 
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="/">Home
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
         </li>
@@ -43,9 +48,6 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/users/sign_up">S'inscrire</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
         </li>
       </ul>
 
