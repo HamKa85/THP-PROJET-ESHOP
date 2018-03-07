@@ -64,18 +64,16 @@
                   <h5><%= item.price %> €</h5>
                   <p class="card-text"><%= item.description %></p>
                 </div>
-                <div>
-                </div>
                 <%= link_to "Afficher", product_path(:id => item.id),:class=>"btn btn-secondary" %>
-                <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
               </div>
             </div>
              <% end %>
           </div>
           <!-- /.row -->
-
+          <div>
+              <br>
+              <br>
+          </div>
         </div>
         <!-- /.col-lg-9 -->
 

@@ -17,4 +17,6 @@ resources :charges, only: [:new, :create]
 
   get '/orders', to: 'orders#index', as: 'orders'
 
+  delete '/cart/destroy', to: 'carts#destroy', as: 'cartdestroy'
+
 end
