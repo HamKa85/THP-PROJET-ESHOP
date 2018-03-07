@@ -18,6 +18,11 @@ class CartsController < ApplicationController
      @cart=current_user.cart.items
   end
 
+    def deleteitem
+      current_user.cart.items.delete(Item.find(params[:id]))
+      redirect_to showcart_path
+    end
+
   def destroy
     current_user.cart.items.clear
     redirect_to showcart_path

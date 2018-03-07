@@ -10,6 +10,7 @@
               <th scope="col">Article</th>
               <th scope="col">description</th>
               <th scope="col">prix</th>
+              <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
@@ -19,6 +20,11 @@
               <td><%=value.title%></td>
               <td><%=value.description%></td>
               <td><%=value.price%>€</td>
+              <td>
+                <%= link_to destroyitem_path(value.id),:class=>"btn btn-danger cart-button",:method => "delete" do %>
+                <i class="far fa-trash-alt"></i>
+                <% end %>
+              </td>
               <% $total += value.price %>
             </tr>
             <%end%>
@@ -37,7 +43,7 @@
     </div>
   </div>
 </div>
-<!--
+
 <%= form_tag charges_path do %>
   <article>
     <% if flash[:error].present? %>
@@ -57,4 +63,7 @@
           data-amount= "<%= @amount %>"
           data-locale="auto"></script>
 <% end %>
--->
+
+<br>
+<br>
+<br>
