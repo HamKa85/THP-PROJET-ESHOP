@@ -22,7 +22,7 @@
               <td><%=value.price%>€</td>
               <td>
                 <%= link_to destroyitem_path(value.id),:class=>"btn btn-danger cart-button",:method => "delete" do %>
-                <i class="far fa-trash-alt"></i>
+                <i class="fa fa-trash"></i>
                 <% end %>
               </td>
               <% $total += value.price %>
