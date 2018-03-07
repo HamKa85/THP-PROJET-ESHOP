@@ -4,14 +4,14 @@ class CartsController < ApplicationController
   def addtocart
       if current_user.cart
          current_user.cart.items << Item.find(params[:id])
-         redirect_to showcart_path
       else
       cart=Cart.new
       cart.user=current_user
       cart.items<<@item
       cart.save
-      redirect_to showcart_path
       end
+      flash[:success] = "Article ajouté à votre panier"
+      redirect_to root_path
   end
 
   def show
@@ -27,7 +27,7 @@ class CartsController < ApplicationController
 
   def require_login
     unless user_signed_in?
-      flash[:error] = "Vous devez vous connecter pour accéder à votre panier"
+      flash[:danger] = "Vous devez vous connecter pour accéder à votre panier"
       redirect_to new_user_session_path
     end
   end

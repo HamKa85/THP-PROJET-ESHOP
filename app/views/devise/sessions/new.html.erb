@@ -4,6 +4,11 @@
     <div class="row align-items-center justify-content-center">
 
       <div class="col-sm-12 col-lg-6 form-box">
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>">
+            <%= message %>
+          </div>
+        <% end %>
 
         <h2>Se Connecter</h2>
 
