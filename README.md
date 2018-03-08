@@ -4,7 +4,7 @@ Hey, salut toi !
 
 Bienvenue sur le repo de notre site de vente d'images de chat.
 
-Pour le site, tu peux venir y faire un tour ici :
+Pour le site, tu peux venir y faire un tour ici : [Poster de chats.com](https://poster-de-chats.herokuapp.com/)
 
 ## le MVP
 
