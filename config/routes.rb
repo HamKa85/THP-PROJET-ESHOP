@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  get '/adminv' , to: 'products#admin_view'
   get 'users/admin'
 
   get 'users/show'
@@ -30,6 +30,9 @@ Rails.application.routes.draw do
 
   delete '/orderdestroy/:id', to: 'orders#destroy', as: 'orderdestroy'
 
+  get '/newitem', to: 'products#new'
+
   get 'users/:id',to: 'users#show', as: 'show_user'
 
+  get '/adminv/edit/:id', to: 'products#edit', as:'edit'
 end
