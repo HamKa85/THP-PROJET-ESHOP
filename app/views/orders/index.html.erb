@@ -21,12 +21,17 @@
                   <%=item.title%> /
                   <%end%>
               </td>
-              <td><%=order.total_price%></td>
-              <td></td>
+              <td><%=order.total_price.round(2)%></td>
+              <% if order.statut == false %>
+              <td>Unpayed</td>
               <td></td>
               <td><%= link_to "Payer", new_charge_path(order.id),  :class=>"btn btn-success cart-button" %>
               <%= link_to "Annuler", orderdestroy_path(order.id),:class=>"btn btn-danger cart-button", :method => "delete" %>
               </td>
+              <%else%>
+              <td>Complete</td>
+              <td></td>
+              <%end%>
             </tr>
             <%end%>
           </tbody>
