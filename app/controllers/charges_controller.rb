@@ -1,6 +1,8 @@
 class ChargesController < ApplicationController
   def new
     @order = Order.find(params[:id])
+    @order.statut = true
+    @order.save!
   end
 
   def create
