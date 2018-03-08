@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>items</h1>
+<%= link_to 'New item', newitem_path %>
 
 <table>
   <thead>
@@ -20,14 +21,12 @@
         <td><%= item.description %></td>
         <td><%= item.price %></td>
         <td><%= item.image_url %></td>
-        <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete %></td>
+        <td><%= link_to 'Show', product_path(:id => item.id) %></td>
+        <td><%= link_to 'Edit', edit_path(:id => item.id) %></td>
+        <td><%= link_to 'Destroy', destroyitem_path(item.id), method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New item', new_item_path %>
