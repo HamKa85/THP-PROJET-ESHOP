@@ -26,11 +26,11 @@ En tant que visiteur, je peux avoir un panier
 En tant qu'administrateur, j'ai accès à un dashboard qui fait un état des lieux des commandes
 En tant qu'administrateur, je peux créer et modifier les produits affichés
 
-### ERROR 404
+### MAILJET
 
 Intégration de Mailjet
 La config est faite, actionMailer en place, compte crée et adresse mail whitelisté
-No work..
+Pas de mail réçu à date...
 
 ---------------------------------------------------------------------------
 
