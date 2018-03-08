@@ -3,6 +3,10 @@ class ProductsController < ApplicationController
     @items = Item.all
   end
 
+  def admin_view
+    @items = Item.all
+  end
+
   def new
     @item = Item.new
   end
@@ -41,6 +45,6 @@ class ProductsController < ApplicationController
 
   private
     def item_params
-      params.require(:item).permit(:title, :description, :price, :image_url, :cart_id, :order_id)
+      params.require(:item).permit(:title, :description, :price, :image_url)
     end
 end
