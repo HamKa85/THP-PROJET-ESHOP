@@ -8,6 +8,9 @@
         <p>Email: <%=current_user.email%></p>
         <a class="dropdown-item" href="/showcart">Mon panier</a>
         <a class="dropdown-item" href="/orders">Mes commandes</a>
+        <% if current_user.admin? %>
+          <a class="btn btn-success cart-button" href="/users/admin">Admin</a>
+        <% end %>
       </div>
     </div>
   </div>

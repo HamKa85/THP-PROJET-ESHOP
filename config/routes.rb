@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get 'users/admin'
+
   get 'users/show'
 
   get 'orderpayement/:id' , to: 'charges#new', as: 'new_charge'
