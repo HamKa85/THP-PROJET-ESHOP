@@ -31,6 +31,20 @@
 
 <br>
 
+<table style="width:30%">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th></th>
+      <th>Prix</th>
+      <th></th>
+      <th>Email</th>
+      <th></th>
+      <th>Order ID</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
 <h1>List of orders</h1>
 <tbody>
   <%@orders.each do |order|%>
@@ -41,7 +55,13 @@
         <%=item.title%> /
         <%end%>
     </td>
+    <td></td>
     <td><%=order.total_price.round(2)%></td>
+    <td></td>
+    <td><%=order.user.email%></td>
+    <td></td>
+    <td><%=order.id%></td>
   </tr>
   <%end%>
 </tbody>
+</table>
