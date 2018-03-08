@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
 
   def admin_view
     @items = Item.all
+    @orders = Order.all
   end
 
   def new

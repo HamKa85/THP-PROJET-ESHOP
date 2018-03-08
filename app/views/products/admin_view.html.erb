@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>items</h1>
+<h1>List of items</h1>
 <%= link_to 'New item', newitem_path %>
 
 <table>
@@ -30,3 +30,18 @@
 </table>
 
 <br>
+
+<h1>List of orders</h1>
+<tbody>
+  <%@orders.each do |order|%>
+  <tr>
+    <td>
+      <p>
+        <%order.items.each do |item|%>
+        <%=item.title%> /
+        <%end%>
+    </td>
+    <td><%=order.total_price.round(2)%></td>
+  </tr>
+  <%end%>
+</tbody>
