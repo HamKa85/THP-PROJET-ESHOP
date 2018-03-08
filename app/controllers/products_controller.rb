@@ -4,8 +4,12 @@ class ProductsController < ApplicationController
   end
 
   def admin_view
+    if current_user.admin?
     @items = Item.all
     @orders = Order.all
+    else
+    redirect_to root_path
+    end
   end
 
   def new
