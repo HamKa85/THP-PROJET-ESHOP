@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+
   get '/adminv' , to: 'products#admin_view'
+
   get 'users/admin'
 
   get 'users/show'
