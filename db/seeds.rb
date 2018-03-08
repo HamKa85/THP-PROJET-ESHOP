@@ -86,3 +86,4 @@ Item.create(title: "Chat penant",
             description: "Beau chat regarde le ciel",
             price: 7.26,
             image_url: "http://hkdigital.fr/chat/20" )
+            
