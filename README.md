@@ -20,6 +20,11 @@ Il a la possibilité de créer de nouveaux produits, les éditer et les supprime
 
 * Le paiement passe par Stripe.
 
+### Interface Admin dispo ici
+
+login : test@gmail.com
+password : test@gmail.com
+
 ### Liste des Features en plus integrées
 
 En tant que visiteur, je peux avoir un panier
