@@ -22,8 +22,8 @@ Il a la possibilité de créer de nouveaux produits, les éditer et les supprime
 
 ### Interface Admin dispo ici
 
-login : test@gmail.com
-password : test@gmail.com
+login : test[at]gmail.com
+password : test[at]gmail.com
 
 ### Liste des Features en plus integrées
 
