@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-resources :charges, only: [:new, :create]
+  get 'users/show'
+
+  get 'orderpayement/:id' , to: 'charges#new', as: 'new_charge'
+
+  post 'payementconfirmation/:id' , to: 'charges#create', as: 'charges'
 
   get 'carts/show'
 
@@ -22,5 +26,7 @@ resources :charges, only: [:new, :create]
   delete '/cart/destroyitem/:id', to: 'carts#deleteitem', as: 'destroyitem'
 
   delete '/orderdestroy/:id', to: 'orders#destroy', as: 'orderdestroy'
+
+  get 'users/:id',to: 'users#show', as: 'show_user'
 
 end

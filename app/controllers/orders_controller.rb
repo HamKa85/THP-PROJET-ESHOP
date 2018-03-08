@@ -14,7 +14,6 @@ class OrdersController < ApplicationController
 
     order.save
     current_user.cart.items.clear
-    UserMailer.welcome_email(@user).deliver_now!
     redirect_to orders_path
   end
 
