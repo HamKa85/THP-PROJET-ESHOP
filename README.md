@@ -15,7 +15,7 @@ Pour le site, tu peux venir y faire un tour ici : [Poster de chats.com](https://
 * Pour devenir User, le visiteur doit se créer un compte ou se connecter. La création de comptes User est géré par la gem Devise. Un user peut voir les images de chats et passer une commande.
 Il a accès à son panier et sa commande.
 
-* L'administrateur à accès à l'ensemble du site ainsi (forcement :) ), il a également une vue sur l'ensemble des commandes (mail / produits achetés et prix)
+* L'administrateur à accès à l'ensemble du site (forcement :) ), il a également une vue sur l'ensemble des commandes (mail / produits achetés / prix)
 Il a la possibilité de créer de nouveaux produits, les éditer et les supprimer.
 
 * Le paiement passe par Stripe.
@@ -26,6 +26,12 @@ En tant que visiteur, je peux avoir un panier
 En tant qu'administrateur, j'ai accès à un dashboard qui fait un état des lieux des commandes
 En tant qu'administrateur, je peux créer et modifier les produits affichés
 
+### ERROR 404
 
+Intégration de Mailjet
+La config est faite, actionMailer en place, compte crée et adresse mail whitelisté
+No work..
+
+---------------------------------------------------------------------------
 
 ### Team : Clément / Dinehs / Hamza / Thibaut
