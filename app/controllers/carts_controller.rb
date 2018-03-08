@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
   before_action :require_login
+  before_action :require_cart, only: [:show]
 
   def addtocart
       if current_user.cart
@@ -36,5 +37,14 @@ class CartsController < ApplicationController
       redirect_to new_user_session_path
     end
   end
+
+def require_cart
+  unless current_user.cart.present?
+    flash[:danger] ="Veuillez ajouter quelque choses au panier"
+    redirect_to root_path
+  end
+  end
+
+
 
 end
