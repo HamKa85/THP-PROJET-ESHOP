@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get 'users/show'
 
-resources :charges, only: [:new, :create]
+  get 'orderpayement/:id' , to: 'charges#new', as: 'new_charge'
+
+  post 'payementconfirmation/:id' , to: 'charges#create', as: 'charges'
 
   get 'carts/show'
 

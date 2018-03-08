@@ -10,7 +10,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'stripe'
 gem 'devise'
-gem 'mailjet'
+gem 'mailjet', '~> 1.5', '>= 1.5.4'
 gem 'bootstrap', '~>4.0.0'
 gem 'jquery-rails'
 gem 'dotenv-rails', :groups => [:development, :test]
@@ -18,6 +18,7 @@ gem "font-awesome-rails"
 
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'

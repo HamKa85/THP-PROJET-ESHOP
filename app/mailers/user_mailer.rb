@@ -1,8 +1,7 @@
 class UserMailer < ApplicationMailer
-  def welcome_email
-    @url = 'localhost:3000'
+  def welcome_email(user)
      mail(from: "adteck@gmail.com",
-          to: 'karouihamza@hotmail.com',
+          to: "karouihamza@hotmail.com",
           subject: "Bienvenue, sur le site Miaouuu")
   end
 
