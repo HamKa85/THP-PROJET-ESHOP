@@ -39,4 +39,11 @@ Pas de mail réçu à date...
 
 ---------------------------------------------------------------------------
 
-### Team : Clément / Dinehs / Hamza / Thibaut
+### Crédit 
+
+Projet developpé dans le cadre du Bootcamp [TheHackingProject](https://www.thehackingproject.org/) :+1:
+
+- <a href="https://github.com/ClemLC" target="_blank">Clément</a>
+- <a href="https://github.com/Kyodex" target="_blank">Dinehs</a>
+- <a href="https://github.com/HamKa85" target="_blank">Hamza</a>
+- <a href="https://github.com/ThibautGrx" target="_blank">Thibaut</a>
